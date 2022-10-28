@@ -6,56 +6,46 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LogINActivity extends AppCompatActivity {
-    Button logInBtn ,cancelBtn;
-    TextView  attemptLeftText;
-    EditText nameEdit, passwordEdit;
-    String name, password ;
-    Boolean nameIsValid = false;
-    Boolean passwordIsValid = false;
+    RelativeLayout logIn ,goToSignUpPage;
+    TextView  goToForgotPasswordPage;
+    EditText emailEdit, passwordEdit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_inactivity);
-        logInBtn =findViewById(R.id.log_in_btn);
-        cancelBtn = findViewById(R.id.cancel_btn);
-        nameEdit = findViewById(R.id.name_edit);
-        passwordEdit = findViewById(R.id.password_edit);
-        attemptLeftText = findViewById(R.id.attempt_left_text);
-        logInBtn.setOnClickListener((v)->{
-            name = nameEdit.getText().toString();
-            password = passwordEdit.getText().toString();
-            nameIsValid = CheckName(name);
-            passwordIsValid = CheckPassword(password);
-            if(nameIsValid && passwordIsValid){
-                //start the main activity
-                Intent goToApp = new Intent(this, MainActivity.class);
-                startActivity(goToApp);
-//                nameEdit.getText().clear();
-//                passwordEdit.getText().clear();
-
-            }else if(passwordIsValid){
-                //say the name is not valid
-            }else{
-                //say the password is not valid
+        emailEdit = findViewById(R.id.email_address_edit);
+        passwordEdit = findViewById(R.id.email_address_edit);
+        goToForgotPasswordPage = findViewById(R.id.gotoforgotpassword);
+        logIn = findViewById(R.id.login);
+        goToSignUpPage = findViewById(R.id.gotosignup);
+        goToForgotPasswordPage.setOnClickListener((v)->{
+            Intent forgetPasswordPageIntent= new Intent(this,ForgetPassword.class);
+            finish();
+            startActivity(forgetPasswordPageIntent);
+        });
+        goToSignUpPage.setOnClickListener((v)->{
+            Intent signupPageIntent= new Intent(this,signupActivity.class);
+            finish();
+            startActivity(signupPageIntent);
+        });
+        logIn.setOnClickListener((v)-> {
+            String mail = emailEdit.getText().toString().trim();
+            String password = passwordEdit.getText().toString().trim();
+            if (mail.isEmpty() || password.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "All Fields are Required", Toast.LENGTH_SHORT).show();
+            } else if (password.length() < 7) {
+                Toast.makeText(getApplicationContext(), "Password should be at least 7 digits", Toast.LENGTH_SHORT).show();
+            } else {
+                //send to firebase
             }
+
         });
-        cancelBtn.setOnClickListener((v)->{
-            nameEdit.getText().clear();
-            passwordEdit.getText().clear();
-        });
-
-
-    }
-
-    private Boolean CheckPassword(String password) {
-        return true;
-    }
-
-    private Boolean CheckName(String name) {
-        return true;
     }
 }
