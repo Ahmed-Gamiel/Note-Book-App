@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNewNote">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarofcreatenote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+
+            android:background="#A1F4FB"
+            app:maxImageSize="20dp"
+            tools:layout_editor_absoluteX="267dp"
+            android:src="@drawable/ic_baseline_create_24"
+
+            tools:layout_editor_absoluteY="72dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Your  Note"
+            android:textAlignment="center"
+            android:textColor="#38BAF4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="18dp" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <EditText
+        android:id="@+id/title_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#E9D8C9C9"
+        android:hint="Enter your note title here"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/body_edit"
+        app:layout_constraintEnd_toEndOf="@+id/body_edit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/body_edit"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarofcreatenote"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/body_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarofcreatenote"
+        android:layout_marginTop="16dp"
+        android:background="#E9D8C9C9"
+        android:gravity="top|left"
+        android:hint="Enter your note content here"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbarofcreatenote"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/toolbarofcreatenote"
+        app:layout_constraintTop_toBottomOf="@+id/title_edit">
+
+    </EditText>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:id="@+id/savenote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:background="#A1F4FB"
+
+        android:src="@drawable/ic_baseline_save_as_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/body_edit"
+        app:layout_constraintVertical_bias="1.0"
+        app:maxImageSize="40dp"
+        tools:ignore="SpeakableTextPresentCheck">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbarofcreatenote">
+
+    </ProgressBar>
+
+    <CheckBox
+        android:id="@+id/save_todo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="Todo"
+        android:textAlignment="center"
+        android:textColor="#34B9F4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/savenote"
+        app:layout_constraintEnd_toEndOf="@+id/savenote"
+        app:layout_constraintStart_toStartOf="@+id/savenote"
+        app:layout_constraintTop_toBottomOf="@+id/body_edit"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

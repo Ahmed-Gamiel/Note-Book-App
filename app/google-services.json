@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "622051879978",
+    "project_id": "noteapp-3370b",
+    "storage_bucket": "noteapp-3370b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622051879978:android:82bbe7d15257d8db302753",
+        "android_client_info": {
+          "package_name": "com.example.viewpagerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622051879978-rnfq5hujpl2tigcog3ns686l5hvpan3v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAboLFdlwXhqVbN871UiOBbq6FIMxaolZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622051879978-rnfq5hujpl2tigcog3ns686l5hvpan3v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -60,7 +60,7 @@
         >
 
         <EditText
-            android:id="@+id/password_edit"
+            android:id="@+id/email_address_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Your Email"
@@ -83,11 +83,12 @@
         >
 
         <EditText
-            android:id="@+id/email_address_edit"
+            android:id="@+id/password_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Your Password"
             android:textSize="20sp"
+            android:inputType="textPassword"
             tools:ignore="SpeakableTextPresentCheck">
 
         </EditText>
@@ -126,10 +127,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="70dp"
         android:layout_marginRight="20dp"
-        android:background="#08E411"
+        android:background="#FFFFFF"
         android:text="Want To Login ?"
         android:textAlignment="center"
-        android:textColor="@color/black"></TextView>
+        android:textColor="#00FF00"></TextView>
 
 
 </RelativeLayout>
